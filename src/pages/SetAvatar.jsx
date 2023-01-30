@@ -1,11 +1,15 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
-import { ToastContainer, toast } from "react-toastify";
+import React from 'react'
+import {useState, useEffect} from 'react'
 function SetAvatar(props) {
+    const [avatar, setAvatar] = useState("")
+    let randomNum  = Math.floor(Math.random()*100000)
+    const BASE_URL = `https://api.multiavatar.com/${randomNum}.png`
+
     return(
         <div>
-            <h1>hello avatar</h1>
+            <h1>hello</h1>
+            <img src={BASE_URL} alt=""/>
+            <img src={BASE_URL} alt=""/>
         </div>
     )
 }
