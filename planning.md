@@ -22,5 +22,5 @@ My target will be only SEI1031_gradutates. If I make them love it, I think I wil
 ## Milestones:
 I will set up my repos on day 1 and work on backend tomorrow. The deadline for backend will be day 2. After that, I will try to make the front-end to be able to display a live chat to a single person, add icons, authentication, upload user's avatar by the end of day 4. Day 5 will work on styling. I will work on one feature of stretch goals at the weekend. This is the perfect picture. I am not sure yet hihi.
 ## Feasibility studies
-3rd party api extensions: MongoDB
-I think I need to fetch 3rd party API for my icons.
++ 3rd party api extensions: MongoDB
++ I think I need to fetch 3rd party API for my icons.
