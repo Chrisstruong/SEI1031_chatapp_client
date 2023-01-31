@@ -2,6 +2,7 @@ import React from "react";
 import './messenger.css'
 import Conversation from '../conversations/Conversations'
 import Message from '../message/Message'
+import ChatOnline from "../chatOnline/ChatOnline";
 
 
 function Messenger() {
@@ -49,7 +50,11 @@ function Messenger() {
             </div>
 
             <div className="chatOnline">
-                <div className="chatOnlineWrapper"></div>
+                <div className="chatOnlineWrapper">
+                    <ChatOnline/>
+                    <ChatOnline/>
+                    <ChatOnline/>
+                </div>
 
             </div>
 
