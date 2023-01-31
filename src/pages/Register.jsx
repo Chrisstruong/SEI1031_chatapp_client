@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import styled from 'styled-components'
 import GA from "../assets/GA.png"
-import {ToastContainer} from 'react-toastify'
+import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import axios from 'axios';
 import { RegisterRoute } from '../utils/APIROUTES';
@@ -14,24 +14,21 @@ function Register(props) {
         password: "",
         confirmPassword: "",
     })
+    const member_URL = 'localhost:4000/member/'
     const handleSubmit = async (event) => {
         event.preventDefault()
-        if(handleValidation()) {
-            const {password, confirmPassword, username} = values;
-            const {data} = await axios.post(RegisterRoute, {
-                username,
-                password,
-            })
+        if (handleValidation()) {
+            const { password, confirmPassword, username } = values;
         }
 
     }//submit the typed user's information
     const handleChange = (event) => {
-        setValues({...values, [event.target.name]: event.target.value})
+        setValues({ ...values, [event.target.name]: event.target.value })
     }//keep what user is typing
     const handleValidation = () => {
-        const {password, confirmPassword, username} = values;
-        if (password !== confirmPassword){
-            toast.error("password and confirm password should be the same.",{
+        const { password, confirmPassword, username } = values;
+        if (password !== confirmPassword) {
+            toast.error("password and confirm password should be the same.", {
                 position: "bottom-right",
                 autoClose: 8000,
                 pauseOnHover: true,
@@ -39,8 +36,8 @@ function Register(props) {
                 theme: "dark",
             })
             return false
-        } else if (username.length<5){
-            toast.error("Username should be at least 5 letters",{
+        } else if (username.length < 5) {
+            toast.error("Username should be at least 5 letters", {
                 position: "bottom-right",
                 autoClose: 8000,
                 pauseOnHover: true,
@@ -48,8 +45,8 @@ function Register(props) {
                 theme: "dark",
             })
             return false
-        } else if (password.length<5){
-            toast.error("Password should be at least 5 letter",{
+        } else if (password.length < 5) {
+            toast.error("Password should be at least 5 letter", {
                 position: "bottom-right",
                 autoClose: 8000,
                 pauseOnHover: true,
@@ -57,44 +54,44 @@ function Register(props) {
                 theme: "dark",
             })
             return false
-        } 
+        }
         return true
     }
     return (
         <>
-        <FormContainer>
-            <form onSubmit={(event) => handleSubmit(event)}>
-                <div className='brand'>
-                    <img src={GA} alt="GA" />
-                    <h1>SEI1031_graduates</h1>
-                </div>
-                <input
-                    type="username"
-                    placeholder="Username"
-                    name="username"
-                    onChange={(e) => handleChange(e)}
-                />
-                <input
-                    type="password"
-                    placeholder="Password"
-                    name="password"
-                    onChange={(e) => handleChange(e)}
-                />
-                <input
-                    type="password"
-                    placeholder="Confirm Password"
-                    name="confirmPassword"
-                    onChange={(e) => handleChange(e)}
-                />
-                <button type="submit">Create User</button>
-                <span>
-                    Already have an account?
-                    <Link to="/login">Login</Link>
-                </span>
+            <FormContainer>
+                <form onSubmit={(event) => handleSubmit(event)}>
+                    <div className='brand'>
+                        <img src={GA} alt="GA" />
+                        <h1>SEI1031_graduates</h1>
+                    </div>
+                    <input
+                        type="username"
+                        placeholder="Username"
+                        name="username"
+                        onChange={(e) => handleChange(e)}
+                    />
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        name="password"
+                        onChange={(e) => handleChange(e)}
+                    />
+                    <input
+                        type="password"
+                        placeholder="Confirm Password"
+                        name="confirmPassword"
+                        onChange={(e) => handleChange(e)}
+                    />
+                    <button type="submit">Create User</button>
+                    <span>
+                        Already have an account?
+                        <Link to="/login">Login</Link>
+                    </span>
 
-            </form>
-        </FormContainer>
-        <ToastContainer />
+                </form>
+            </FormContainer>
+            <ToastContainer />
         </>
     )
 }
