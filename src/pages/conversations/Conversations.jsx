@@ -1,20 +1,30 @@
 import React, { useEffect, useState } from "react";
 import './conversation.css'
 
-function Conversation({conversation}){
+function Conversation({conversation, currentUserId}){
     const [user, setUser] = useState(null)
-
-    function friendId (){
-
+    const friendId = conversation.members.find((m)=> m !== currentUserId)
+    const getFriend = async() => {
+        try {
+            const response = await fetch("http://localhost:4000/member/"+friendId)
+            const foundFriend = await response.json()
+            console.log(foundFriend)
+            setUser(foundFriend)
+        }catch(err) {
+            console.log(err)
+        }
     }
+    
 
     useEffect(()=>{
-        friendId()
+        getFriend()
     },[])
     return(
         <div className="conversation">
-            <img className="conversationImg" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt=""/>
-            <span className="conversationName">John Doe</span>            
+            <img className="conversationImg" 
+            src ="https://t4.ftcdn.net/jpg/03/59/58/91/360_F_359589186_JDLl8dIWoBNf1iqEkHxhUeeOulx0wOC5.jpg"
+            alt=""/>
+            <span className="conversationName">Triet</span>            
          </div>
     )
 }

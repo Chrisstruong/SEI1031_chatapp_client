@@ -30,7 +30,7 @@ function Messenger() {
                 <div className="chatMenuWrapper">
                     <input placeholder = "Search for friends" className="chatMenuInput"/>
                     {conversations.map((c)=> (
-                        <Conversation conversation={c}/>
+                        <Conversation conversation={c} currentUserId={"63d93777d6b390a57e393319"}/>
                     ))}
                 </div>
 
