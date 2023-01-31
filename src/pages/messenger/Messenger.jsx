@@ -15,7 +15,7 @@ function Messenger() {
         try{
             const response = await fetch(BASE_URL)
             const foundUserConversation = await response.json()
-            console.log(foundUserConversation)
+            console.log(`foundUserConversation is ${foundUserConversation}`)
             setConversations(foundUserConversation)
         } catch (err){
             console.log(err)
