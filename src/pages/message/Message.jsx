@@ -11,7 +11,7 @@ function Message({ message, own }) {
                 </p>
             </div>
             <div className="messageBottom">
-                {message.createdAt}
+                {format(message.createdAt)}
 
             </div>
         </div>
