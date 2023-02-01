@@ -1,4 +1,4 @@
-import { useState, useEFfect } from "react"
+import { useState, useEffect } from "react"
 import React from "react"
 import { useNavigate, useParams } from "react-router-dom"
 
@@ -10,11 +10,10 @@ function Profile () {
     const params = useParams()
     const {userId} = params
     const navigate = useNavigate()
-    const deleteURL = `http:localhost4000/member/${userId}`
-    
+    const deleteURL = `http://localhost:4000/member/${userId}`
     const getMember = async () => {
         try {
-            const response = await fetch(`http:localhost4000/member/${userId}`)
+            const response = await fetch(`http://localhost:4000/member/${userId}`)
             const foundMember = await response.json()
             setMember(foundMember)
         } catch(err) {
@@ -22,9 +21,9 @@ function Profile () {
         }
     }
 
-    useEFfect(()=> {
+    useEffect(()=> {
         getMember()
-    },[])
+    }, [])
 
 
     const removedMember = async () => {
@@ -40,10 +39,11 @@ function Profile () {
         }
     }
     const updatedMember = async (e) => {
+        e.preventDefault()
         const member = {
             _id: userId,
             username: newName,
-            avatar: newAvatar
+            avatarImage: newAvatar
         }
         try {
             const requestOptions = {
@@ -53,10 +53,11 @@ function Profile () {
                 },
                 body:JSON.stringify(member)
             }
-            const response = await fetch(`http:localhost4000/member/${userId}`)
+            const response = await fetch(`http://localhost:4000/member/${userId}`)
             const updatedMember = await response.json()
             setMember(updatedMember)
-            navigate(-1)
+            console.log(member)
+            // navigate('/')
         } catch(err){
             console.log(err)
         }
@@ -80,6 +81,7 @@ function Profile () {
                         onChange={(e)=> setNewAvatar(e.target.value)}
                         />
                     </label>
+                    <input type="submit" value="updated profile"/>
                 </form>
             </div>
         </>

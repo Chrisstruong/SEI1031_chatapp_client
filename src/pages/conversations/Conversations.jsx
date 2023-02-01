@@ -12,16 +12,14 @@ function Conversation({conversation, currentUserId}){
             const response = await fetch("http://localhost:4000/member/"+friendId)
             const foundFriend = await response.json()
             setName(foundFriend.username)
-            setImage(foundFriend.avatar)
+            setImage(foundFriend.avatarImage)
         }catch(err) {
             console.log(err)
         }
     }
-
     useEffect(()=>{
         getFriend()
     },[])
-    console.log(typeof Name)
     return(
         <div className="conversation">
             <img className="conversationImg" 
