@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import './conversation.css'
+import { VscKebabVertical } from "react-icons/vsc";
+
 
 function Conversation({ conversation, currentUserId }) {
+    const [isShown, setIsShown] = useState(false)
     const [Name, setName] = useState(null)
     const [image, setImage] = useState(null)
     const friendId = conversation.members.find(function (id) {
@@ -21,11 +24,12 @@ function Conversation({ conversation, currentUserId }) {
         getFriend()
     }, [])
     return (
-        <div className="conversation">
+        <div className="conversation" onMouseEnter={()=>setIsShown(true)} onMouseLeave={()=>setIsShown(false)}>
             <img className="conversationImg"
                 src={image ? image : "https://t4.ftcdn.net/jpg/03/59/58/91/360_F_359589186_JDLl8dIWoBNf1iqEkHxhUeeOulx0wOC5.jpg"}
                 alt="" />
             <span className="conversationName">{Name}</span>
+            {isShown? <p className='edit'>{<VscKebabVertical/>}</p>: ""}
         </div>
     )
 }

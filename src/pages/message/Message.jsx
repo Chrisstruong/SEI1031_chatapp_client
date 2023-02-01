@@ -2,7 +2,8 @@ import './message.css'
 import {format} from "timeago.js"
 import { useState } from 'react'
 import React from 'react'
-import { VscKebabVertical } from "react-icons/vsc";import { AiFillAccountBook } from "react-icons/ai";
+import { VscKebabVertical } from "react-icons/vsc";
+import { AiFillAccountBook } from "react-icons/ai";
 import { useNavigate } from 'react-router-dom';
 function Message({ message, own }) {
     const [isShown, setIsShown] = useState(false)

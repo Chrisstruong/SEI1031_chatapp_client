@@ -45,7 +45,6 @@ function MessageDetail (){
             sender: message.sender,
             text: newText,
         }
-        console.log(newMessage.text)
         try {
             const requestOptions = {
                 method:"PUT",

@@ -42,7 +42,6 @@ function Messenger() {
         getMessages()
     }, [currentChat])
     const handleSubmit = async (e) => {
-        console.log("hello")
         const message = {
             conversationId : currentChat._id,
             sender: userId,
