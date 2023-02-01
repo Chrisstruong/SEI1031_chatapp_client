@@ -7,6 +7,8 @@ import Login from './pages/Login'
 import Messenger from "./pages/messenger/Messenger";
 import SetAvatar from "./pages/SetAvatar";
 import socketIO from 'socket.io-client'
+import FakeAuthentication from "./pages/FakeAuthentication";
+import Profile from "./pages/Profile";
 
 const socket = socketIO('http://localhost:4000')
 
@@ -22,11 +24,13 @@ function App() {
   return (
     <div className="App">
       <Routes>
+        <Route path='/' element={<FakeAuthentication/>}/>
         <Route path="/register" element={<Register />}/>
         <Route path="/login" element={<Login />}/>
         <Route path="/avatar" element={<SetAvatar />}/>
         <Route path="/chat" element={<Chat />}/>
-        <Route path='/messenger' element={<Messenger />}/>
+        <Route path='/messenger/:userId' element={<Messenger />}/>
+        <Route path='/profile/:userId' element={<Profile/>}/>
       </Routes>
     </div>
   );
