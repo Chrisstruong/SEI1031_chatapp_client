@@ -26,18 +26,18 @@ function Profile () {
     }, [])
 
 
-    const removedMember = async () => {
-        try {
-            const options = {
-                method: "DELETE",
-            }
-            const response = await fetch(deleteURL, options)
-            const deletedReview = await response.json
-        } catch(err){
-            console.log(err)
-            navigate('/')
-        }
-    }
+    // const removedMember = async () => {
+    //     try {
+    //         const options = {
+    //             method: "DELETE",
+    //         }
+    //         const response = await fetch(deleteURL, options)
+    //         const deletedReview = await response.json
+    //     } catch(err){
+    //         console.log(err)
+    //         navigate('/')
+    //     }
+    // }
     const updatedMember = async (e) => {
         e.preventDefault()
         const newMember = {
@@ -86,9 +86,9 @@ function Profile () {
                     <input type="submit" value="updated profile"/>
                 </form>
 
-                <div>
+                {/* <div>
                     <button onClick={removedMember}>Remove account</button>
-                </div>
+                </div> */}
             </div>
         </>
     )
