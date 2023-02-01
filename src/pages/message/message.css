@@ -1,14 +1,14 @@
 .message {
-    display:flex;
+    display: flex;
     flex-direction: column;
     margin-top: 20px;
 }
 
-.messageTop{
+.messageTop {
     display: flex;
 }
 
-.messageImg{
+.messageImg {
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -16,8 +16,9 @@
     margin-right: 10px;
 }
 
-.messageText{
-    padding:10px;
+.messageText {
+    display: flex;
+    padding: 10px;
     border-radius: 20px;
     background-color: #1877f2;
     color: white;
@@ -25,15 +26,31 @@
 }
 
 .messageBottom {
-    font-size:12px;
+    font-size: 12px;
     margin-top: 10px;
 }
 
-.message.own{
+.message.own {
     align-items: flex-end;
 }
 
-.message.own .messageText{
+.message.own .messageText {
     background-color: white;
     color: black;
+}
+
+.edit {
+    padding: 3px;
+    border-radius: 50px;
+    margin-left: 20px;
+    bottom: 0;
+
+}
+
+.edit:hover {
+    cursor: pointer;
+    padding: 3px;
+    border-radius: 50px;
+    margin-left: 20px;
+    background-color: black;
 }

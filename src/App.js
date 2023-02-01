@@ -9,6 +9,7 @@ import SetAvatar from "./pages/SetAvatar";
 import socketIO from 'socket.io-client'
 import FakeAuthentication from "./pages/FakeAuthentication";
 import Profile from "./pages/Profile";
+import MessageDetail from "./pages/message/MessageDetail";
 
 const socket = socketIO('http://localhost:4000')
 
@@ -30,6 +31,7 @@ function App() {
         <Route path="/avatar" element={<SetAvatar />}/>
         <Route path="/chat" element={<Chat />}/>
         <Route path='/messenger/:userId' element={<Messenger />}/>
+        <Route path='/message/:id' element={<MessageDetail/>} />
         <Route path='/profile/:userId' element={<Profile/>}/>
       </Routes>
     </div>
