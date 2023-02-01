@@ -40,23 +40,25 @@ function Profile () {
     }
     const updatedMember = async (e) => {
         e.preventDefault()
-        const member = {
+        const newMember = {
             _id: userId,
             username: newName,
             avatarImage: newAvatar
         }
+        console.log(newMember.avatarImage)
         try {
             const requestOptions = {
                 method:"PUT",
                 headers: {
-                    "Content-type": "application/json",
+                    "Content-Type": "application/json",
                 },
-                body:JSON.stringify(member)
+                body: JSON.stringify(newMember)
             }
-            const response = await fetch(`http://localhost:4000/member/${userId}`)
+            const response = await fetch(`http://localhost:4000/member/${userId}`, requestOptions)
             const updatedMember = await response.json()
             setMember(updatedMember)
             console.log(member)
+            // console.log(member)
             // navigate('/')
         } catch(err){
             console.log(err)
