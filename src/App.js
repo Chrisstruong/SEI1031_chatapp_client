@@ -10,6 +10,7 @@ import socketIO from 'socket.io-client'
 import FakeAuthentication from "./pages/FakeAuthentication";
 import Profile from "./pages/Profile";
 import MessageDetail from "./pages/message/MessageDetail";
+import FriendProfile from "./pages/friends/FriendProfile";
 
 const socket = socketIO('http://localhost:4000')
 
@@ -33,6 +34,7 @@ function App() {
         <Route path='/messenger/:userId' element={<Messenger />}/>
         <Route path='/message/:id' element={<MessageDetail/>} />
         <Route path='/profile/:userId' element={<Profile/>}/>
+        <Route path='/profile/:username/:id/:userId' element={<FriendProfile/>} />
       </Routes>
     </div>
   );
