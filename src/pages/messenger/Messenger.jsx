@@ -78,7 +78,7 @@ function Messenger() {
                     <input placeholder = "Search for friends" className="chatMenuInput"/>
                     {conversations.map((c)=> (
                         <div onClick={()=> setCurrentChat(c)}>
-                        <Conversation conversation={c} currentUserId={userId}/>
+                        <Conversation conversation={c} currentUserId={userId} currentConversation={currentChat}/>
                         </div>
                     ))}
                 </div>
