@@ -4,13 +4,11 @@ import { BsSearch } from "react-icons/bs"
 import './search.css'
 
 
-
-
 function Search({ID}) {
     const [searchValue, setSearchValue] = useState('')
     const [conversation, setConversation] = useState([])
     const [users, setUsers] = useState('')
-    const [rci, setRci] = useState({})
+    const [receiverIds, setReceiverIds] = useState('')
     const URL = 'http://localhost:4000/member'
 
     const getUsers = async () => {
@@ -38,7 +36,7 @@ function Search({ID}) {
 
     useEffect(()=>{
         getConversation()
-    },[conversation])
+    },[])
 
     const onChange = (e) => {
         setSearchValue(e.target.value)
@@ -46,8 +44,9 @@ function Search({ID}) {
     const onSearch = async (e) => {
         const newFriend = {
             senderId: ID,
-            receiverId: rci._id,
+            receiverId: receiverIds._id,
         }
+        console.log(newFriend)
         try{
             const requestOptions = {
                 method: "POST",
@@ -78,7 +77,7 @@ function Search({ID}) {
                     return (searchItem && userName2.startsWith(searchItem) && userName2 !== searchItem)
                 }).slice(0, 8)
                     .map((user, idx) => (
-                        <div className='drop-down-row'onClick={()=>{setRci(user);onSearch()}} key={idx}>
+                        <div className='drop-down-row'onClick={()=>{setReceiverIds(user);console.log(receiverIds);onSearch()}} key={idx}>
                             <div className='drop-down-info' >
                                 <img id="search-image" style={{ borderRadius: '10px' }} src={user.avatarImage} alt="" />
                                 <div>
