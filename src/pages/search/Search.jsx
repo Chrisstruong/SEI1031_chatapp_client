@@ -6,9 +6,11 @@ import './search.css'
 
 
 
-function Search() {
+function Search({ID}) {
     const [searchValue, setSearchValue] = useState('')
+    const [conversation, setConversation] = useState([])
     const [users, setUsers] = useState('')
+    const [rci, setRci] = useState({})
     const URL = 'http://localhost:4000/member'
 
     const getUsers = async () => {
@@ -20,16 +22,47 @@ function Search() {
             console.log(err)
         }
     }
-
     useEffect(() => {
         getUsers()
     }, [])
 
+    const getConversation = async()=>{
+        try{
+            const response = await fetch(`http://localhost:4000/conversations/${ID}`)
+            const foundConversation = await response.json()
+            setConversation(foundConversation)
+        } catch(err){
+            console.log(err)
+        }
+    }
+
+    useEffect(()=>{
+        getConversation()
+    },[conversation])
+
     const onChange = (e) => {
         setSearchValue(e.target.value)
     }
-    const onSearch = (searchItem) => {
-        setSearchValue(searchItem)
+    const onSearch = async (e) => {
+        const newFriend = {
+            senderId: ID,
+            receiverId: rci._id,
+        }
+        try{
+            const requestOptions = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body:JSON.stringify(newFriend)
+            }
+            const response = await fetch('http://localhost:4000/conversations', requestOptions)
+            const createdFriend = await response.json()
+            setConversation([...conversation, createdFriend])
+        } catch(err) {
+            console.log(err)
+        }
+        // window.location.reload(false)
     }
     return (
         <div className='search-context'>
@@ -45,8 +78,8 @@ function Search() {
                     return (searchItem && userName2.startsWith(searchItem) && userName2 !== searchItem)
                 }).slice(0, 8)
                     .map((user, idx) => (
-                        <div onClick={() => onSearch(user)} className='drop-down-row' key={idx}>
-                            <div className='drop-down-info'>
+                        <div className='drop-down-row'onClick={()=>{setRci(user);onSearch()}} key={idx}>
+                            <div className='drop-down-info' >
                                 <img id="search-image" style={{ borderRadius: '10px' }} src={user.avatarImage} alt="" />
                                 <div>
                                     <div id="search-title" style={{ textDecoration: 'none' }}>{user.username}</div>

@@ -42,7 +42,7 @@ function Conversation({ conversation, currentUserId, currentConversation }) {
         }
     }
     return (
-        <div className="conversation" onMouseEnter={()=>setIsShown(true)} onMouseLeave={()=>setIsShown(false)}>
+        <div className="conversation" onMouseEnter={()=>setIsShown(true)} onMouseLeave={()=>{setIsShown(false); setIsShownButton(false)}}>
             <img className="conversationImg"
                 src={image ? image : "https://t4.ftcdn.net/jpg/03/59/58/91/360_F_359589186_JDLl8dIWoBNf1iqEkHxhUeeOulx0wOC5.jpg"}
                 alt="" />
