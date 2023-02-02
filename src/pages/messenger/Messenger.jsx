@@ -4,6 +4,7 @@ import './messenger.css'
 import Conversation from '../conversations/Conversations'
 import Message from '../message/Message'
 import ChatOnline from "../chatOnline/ChatOnline";
+import Search from "../search/Search";
 
 function Messenger() {
     let {userId} = useParams()
@@ -75,7 +76,8 @@ function Messenger() {
         <div className="messenger">
             <div className="chatMenu">
                 <div className="chatMenuWrapper">
-                    <input placeholder = "Search for friends" className="chatMenuInput"/>
+                    {/* <input placeholder = "Search for friends" className="chatMenuInput"/> */}
+                    <Search className="chatMenuInput" />
                     {conversations.map((c)=> (
                         <div onClick={()=> setCurrentChat(c)}>
                         <Conversation conversation={c} currentUserId={userId} currentConversation={currentChat}/>
