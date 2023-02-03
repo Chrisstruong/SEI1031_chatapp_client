@@ -33,7 +33,7 @@ function App() {
         setUser: setCurrentUser
       }}>
         <Routes>
-          <Route path='/' element={<FakeAuthentication />} />
+          {/* <Route path='/' element={<FakeAuthentication />} /> */}
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/avatar" element={<SetAvatar />} />
@@ -44,7 +44,7 @@ function App() {
           <Route path='/profile/:username/:id/:userId' element={<FriendProfile />} />
 
           <Route path='/home' element={<Home />} />
-          <Route path='/auth' element={<Auth />} />
+          <Route path='/' element={<Auth />} />
         </Routes>
       </UserInfo>
     </div>
