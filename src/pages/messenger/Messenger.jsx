@@ -5,8 +5,10 @@ import Conversation from '../conversations/Conversations'
 import Message from '../message/Message'
 import ChatOnline from "../chatOnline/ChatOnline";
 import Search from "../search/Search";
+import { getUserToken } from "../../utils/authToken";
 
 function Messenger() {
+    const token = getUserToken()
     let {userId} = useParams()
     const navigate = useNavigate()
     const[conversations, setConversations] = useState([])//this is for fetching the username and avatar in the contact list (member model)
@@ -15,6 +17,10 @@ function Messenger() {
     const[newMessage, setNewMessage] = useState("")//This is for typing box when user texting
     const scrollRef = useRef()
     const BASE_URL = `http://localhost:4000/conversations/${userId}`
+
+    if (!token){
+        navigate('/auth')
+    }
 
     const getUserConversation = async() =>{
         try{
@@ -47,12 +53,15 @@ function Messenger() {
             conversationId : currentChat._id,
             sender: userId,
             text: newMessage,
+            owner: userId
         }
+        console.log(userId)
         try {
             const requestOptions = {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`
                 },
                 body:JSON.stringify(message)
             }

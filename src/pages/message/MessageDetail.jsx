@@ -1,13 +1,19 @@
 import {useState, useEffect} from 'react'
 import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import { getUserToken } from '../../utils/authToken'
 function MessageDetail (){
+    const token = getUserToken()
+    
     const [message, setMessage] = useState([])
     const [newText, setNewText] = useState("")
     const params = useParams()
     const {id} = params
     const navigate = useNavigate()
 
+    if (!token){
+        navigate('/auth')
+    }
     const getMessage = async ()=>{
         try{
             const response = await fetch(`http://localhost:4000/messages/detail/${id}`)
@@ -27,6 +33,10 @@ function MessageDetail (){
         try {
             const options = {
                 method:"DELETE",
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                }
+            
             }
             const response = await fetch(`http://localhost:4000/messages/detail/${id}`, options)
             const deletedMessage = await response.json
@@ -50,6 +60,7 @@ function MessageDetail (){
                 method:"PUT",
                 headers: {
                     "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`
                 },
                 body: JSON.stringify(newMessage)
             }

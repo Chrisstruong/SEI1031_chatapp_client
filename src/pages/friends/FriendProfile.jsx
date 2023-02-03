@@ -28,7 +28,7 @@ function FriendProfile() {
 
     const getFriend = async () => {
         try {
-            const response = await fetch(`http://localhost:4000/member/${id}`)
+            const response = await fetch(`http://localhost:4000/auth/${id}`)
             const foundFriend = await response.json()
             console.log(foundFriend)
             setFriend(foundFriend)

@@ -15,7 +15,7 @@ function Conversation({ conversation, currentUserId, currentConversation }) {
     })
     const getFriend = async () => {
         try {
-            const response = await fetch("http://localhost:4000/member/" + friendId)
+            const response = await fetch("http://localhost:4000/auth/" + friendId)
             const foundFriend = await response.json()
             setName(foundFriend.username)
             setImage(foundFriend.avatarImage)

@@ -9,7 +9,7 @@ function Search({ ID }) {
     const [conversation, setConversation] = useState([])
     const [users, setUsers] = useState('')
     const [receiverIds, setReceiverIds] = useState('')
-    const URL = 'http://localhost:4000/member'
+    const URL = 'http://localhost:4000/auth'
 
     const getUsers = async () => {
         try {
@@ -28,6 +28,7 @@ function Search({ ID }) {
         try {
             const response = await fetch(`http://localhost:4000/conversations/${ID}`)
             const foundConversation = await response.json()
+            console.log(foundConversation)
             setConversation(foundConversation)
         } catch (err) {
             console.log(err)
@@ -71,7 +72,7 @@ function Search({ ID }) {
         <div className='search-context'>
             <div className='search-context-inner'>
                 <p id="look-up-symbol">{<BsSearch />}</p>
-                <input type="text" value={searchValue} onChange={onChange} id="search" autoComplete="off" placeholder='Search name of SEI1031 members...' />
+                <input type="text" value={searchValue} onChange={onChange} id="search" autoComplete="off" placeholder='Add new friend...' />
                 <button onClick={onSearch}>Search</button>
             </div>
             <div className='drop-down-list'>

@@ -1,19 +1,21 @@
 import { useState, useEffect } from "react"
 import React from "react"
 import { useNavigate, useParams } from "react-router-dom"
+import { getUserToken } from "../utils/authToken"
 
 
 function Profile () {
+    const token = getUserToken()
     const [member, setMember] = useState([])
     const [newName, setNewName] = useState("")
     const [newAvatar, setNewAvatar] = useState("")
     const params = useParams()
     const {userId} = params
     const navigate = useNavigate()
-    const deleteURL = `http://localhost:4000/member/${userId}`
+    const deleteURL = `http://localhost:4000/auth/${userId}`
     const getMember = async () => {
         try {
-            const response = await fetch(`http://localhost:4000/member/${userId}`)
+            const response = await fetch(`http://localhost:4000/auth/${userId}`)
             const foundMember = await response.json()
             setMember(foundMember)
         } catch(err) {
@@ -51,15 +53,16 @@ function Profile () {
                 method:"PUT",
                 headers: {
                     "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`
                 },
                 body: JSON.stringify(newMember)
             }
-            const response = await fetch(`http://localhost:4000/member/${userId}`, requestOptions)
+            const response = await fetch(`http://localhost:4000/auth/${userId}`, requestOptions)
             const updatedMember = await response.json()
             setMember(updatedMember)
             console.log(member)
             // console.log(member)
-            // navigate('/')
+            navigate(-1)
         } catch(err){
             console.log(err)
         }
