@@ -71,9 +71,7 @@ function Search({ ID }) {
     return (
         <div className='search-context'>
             <div className='search-context-inner'>
-                <p id="look-up-symbol">{<BsSearch />}</p>
                 <input type="text" value={searchValue} onChange={onChange} id="search" autoComplete="off" placeholder='Add new friend...' />
-                <button onClick={onSearch}>Search</button>
             </div>
             <div className='drop-down-list'>
                 {Object.values(users).filter((user) => {

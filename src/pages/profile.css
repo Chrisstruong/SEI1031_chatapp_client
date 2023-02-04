@@ -1,0 +1,88 @@
+.profile-container{
+    background-color: antiquewhite;
+    height: 100vh;
+    width: 100vw;
+}
+
+#background{
+    /* background: url("https://images.unsplash.com/photo-1608555307638-992062b31329?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YmFja2dyb3VuZCUyMG9yYW5nZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60") no-repeat center center fixed;  */
+    /* background-size: cover; */
+    opacity: 0.9;
+    position: relative;  
+}
+
+#background2{
+    height: 350px;
+    width: 100%;
+}
+
+.profile-info{
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    color: sandybrown;
+    text-decoration: underline;
+    gap: 2%;
+}
+
+#profile-avatar{
+    width: 10%;
+}
+
+
+.profile-container2{
+    display: flex;
+    
+}
+
+.profile-form{
+     display: flex;
+     justify-content: center;
+     justify-content: space-between;
+     font-size: 25px;
+     color: sandybrown;
+     width: 100%;
+     margin-top:30px ;
+}
+
+#profile-form-input{
+    border: none;
+    font-size: 25px;
+    width: 95%;
+    color: sandybrown;
+}
+#profile-form-input2{
+    border: none;
+    font-size: 25px;
+    width: 95%;
+    color: sandybrown;
+
+}
+
+#profile-form-input:focus{
+    outline: none;
+}
+
+#btn{
+    width:20%;
+    padding: 30px;
+    font-size: 25px;
+    background: rgb(112, 31, 13);
+    color: sandybrown;
+    cursor: pointer; 
+
+}
+
+.combine2{
+    width: 100%;
+    position: absolute;
+    top: 38%;
+}
+
+.avatar-array{
+    width: 15%;
+    gap: 10%;
+}
+
+
+
