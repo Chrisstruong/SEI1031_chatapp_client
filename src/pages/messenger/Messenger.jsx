@@ -5,7 +5,7 @@ import Conversation from '../conversations/Conversations'
 import Message from '../message/Message'
 import ChatOnline from "../chatOnline/ChatOnline";
 import Search from "../search/Search";
-import { getUserToken } from "../../utils/authToken";
+import { getUserToken, clearUserToken } from "../../utils/authToken";
 
 function Messenger() {
     const token = getUserToken()
@@ -19,7 +19,7 @@ function Messenger() {
     const BASE_URL = `http://localhost:4000/conversations/${userId}`
 
     if (!token){
-        navigate('/auth')
+        navigate('/')
     }
 
     const getUserConversation = async() =>{
@@ -127,6 +127,10 @@ function Messenger() {
 
             </div>
             <button onClick={()=>navigate(`/profile/${userId}`)}>go to profile</button>
+            <button onClick={()=>{
+                clearUserToken()
+                navigate('/')
+            }}>Sign Out</button>
 
 
         </div>

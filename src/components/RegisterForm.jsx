@@ -13,7 +13,7 @@ const RegisterForm = ({signUp}) => {
     const createdUserToken = await signUp(input)
 
     if (createdUserToken) {
-      navigate(`/messenger/${createdUserToken.user._id}`)
+      navigate(`/register/setAvatar/${createdUserToken.user._id}`)
     } else {
       navigate("/")
     }

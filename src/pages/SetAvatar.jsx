@@ -61,7 +61,7 @@ function SetAvatar(props) {
             const response = await fetch(`http://localhost:4000/auth/${userId}`, requestOptions)
             const updatedMember = await response.json()
             setMember(updatedMember)
-            // navigate(`/messengers/${userId}`)
+            navigate(`/messenger/${userId}`)
         } catch (err) {
             console.log(err)
         }
