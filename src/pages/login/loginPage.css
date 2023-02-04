@@ -1,0 +1,157 @@
+/* LoginPage.jsz */
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
+
+body {
+    overflow: auto;
+    background-color: white;
+    height: 100%;
+    font-family: 'Rubik', sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+
+.container{
+    border: 2px solid black;
+    background-color: sandybrown;
+    height:100vh;
+    width: 100vw;
+}
+
+.GA-sei1031{
+    background-color: antiquewhite;
+    margin-top: 100px;
+    border-radius: 40px;
+    width:50%;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    margin-left: 23%;
+    
+}
+
+.GA-header{
+    display: flex;
+    justify-content: center;
+}
+
+#GA-image {
+    width:80px;
+    height: auto;
+}
+
+
+#SEI1031{
+    margin-left: 20px;
+    color: rgba(255, 162, 23, 0.785);
+}
+
+.Link-to-register{
+    display: flex;
+    justify-content: center;
+    color:rgb(147, 27, 27);
+    font-size: 20px;
+}
+
+#Register{
+    text-decoration: none;
+    color: rgb(65, 32, 5);
+}
+
+#Register:hover{
+    text-decoration: underline;
+    color: rgb(249, 102, 119);
+}
+
+
+
+
+
+
+/* LoginForm.jsx */
+
+.login-form-container{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    color: rgba(255, 162, 23, 0.785);
+}
+
+#username{
+    padding: 10px 30px 0px 10px;
+    border: white;
+    border-right: 5px solid rgb(147, 27, 27);
+    border-bottom: 3px solid rgb(147, 27, 27);
+    font-size: 20px;
+    color: rgb(147, 27, 27);
+}
+
+#username:focus{
+    outline: none;
+}
+
+#password{
+    padding: 10px 30px 0px 10px;
+    border: white;
+    border-right: 5px solid rgb(147, 27, 27);
+    border-bottom: 3px solid rgb(147, 27, 27);
+    font-size: 20px;
+    color: rgb(147, 27, 27);
+}
+
+#password:focus{
+    outline: none;
+}
+
+#log-in-user {
+    cursor: pointer;
+    font-size: 30px;
+    background-color: rgb(147, 27, 27);
+    color:rgba(255, 162, 23, 0.785);
+    border: none;
+    padding: 15px 150px 15px 150px;
+}
+
+
+
+
+/* Auth.jsx*/
+
+#Register2{
+    margin-left: 20%;
+    position: relative;
+    width: 32%;
+    font-size: 50px;
+    color: rgba(255, 162, 23, 0.785);
+    -webkit-text-stroke: 0.05vw antiquewhite;  
+}
+
+#Register2:before{
+    content: attr(data-text);
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: rgba(255, 162, 23, 0.785);
+    -webkit-text-stroke: 0.1vw rgb(246, 129, 39);
+    border-right: 4px solid rgb(246, 129, 39);
+    overflow: hidden;
+    animation: animate 10s linear infinite;
+}
+
+@keyframes animate{
+    0%, 10%, 100% {
+        width:0;
+    }
+    70%, 90% {
+        width:100%;
+    }
+}

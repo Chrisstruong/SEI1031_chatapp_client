@@ -1,12 +1,10 @@
 import React from "react";
+import './app.css'
 import { useState } from "react";
 import { Routes, Route } from 'react-router-dom'
-import Register from './pages/Register'
 import Chat from './pages/Chat'
-import Login from './pages/Login'
 import Messenger from "./pages/messenger/Messenger";
 import SetAvatar from "./pages/SetAvatar";
-import FakeAuthentication from "./pages/FakeAuthentication";
 import Profile from "./pages/Profile";
 import MessageDetail from "./pages/message/MessageDetail";
 import FriendProfile from "./pages/friends/FriendProfile";
@@ -15,6 +13,7 @@ import Home from "./pages/Home";
 import Auth from "./pages/Auth";
 
 import { UserContext } from "./data";
+import LoginPage from "./pages/LoginPage";
 console.log(UserContext)
 
 
@@ -34,9 +33,7 @@ function App() {
       }}>
         <Routes>
           {/* <Route path='/' element={<FakeAuthentication />} /> */}
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/avatar" element={<SetAvatar />} />
+          {/* <Route path="/register" element={<Register />} /> */}
           <Route path="/chat" element={<Chat />} />
           <Route path='/messenger/:userId' element={<Messenger />} />
           <Route path='/message/:id' element={<MessageDetail />} />
@@ -44,7 +41,10 @@ function App() {
           <Route path='/profile/:username/:id/:userId' element={<FriendProfile />} />
 
           <Route path='/home' element={<Home />} />
-          <Route path='/' element={<Auth />} />
+          <Route path='/' element={<LoginPage />} />
+          <Route path='/register' element={<Auth/>}/>
+          <Route path="/register/setAvatar/:userId" element={<SetAvatar />} />
+
         </Routes>
       </UserInfo>
     </div>

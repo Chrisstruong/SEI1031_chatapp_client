@@ -25,13 +25,14 @@ const RegisterForm = ({signUp}) => {
   };
 
   return (
-    <>
-      <h1>Register</h1>
+    <div className='login-form-container'>
+      {/* <h1>Register</h1> */}
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">Name: </label>
         <input
           id="username"
           name="username"
+          placeholder='username'
           value={input.username}
           onChange={handleChange}
         />
@@ -40,15 +41,16 @@ const RegisterForm = ({signUp}) => {
         <label htmlFor="password">Password: </label>
         <input
           id="password"
+          placeholder='password'
           name="password"
           value={input.password}
           onChange={handleChange}
         />
         <br />
         <br />
-        <input type="submit" value="Sign Up" />
+        <input type="submit" value="Create User" id="log-in-user"/>
       </form>
-    </>
+    </div>
   );
 };
 

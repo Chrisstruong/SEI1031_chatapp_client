@@ -1,5 +1,6 @@
 import {useNavigate} from 'react-router-dom';
 import {useState} from 'react';
+// import '../pages/login/loginPage.css'
 
 
 const LoginForm = ({signIn}) => {
@@ -25,8 +26,7 @@ const LoginForm = ({signIn}) => {
   };
 
   return (
-    <>
-      <h1>Login</h1>
+    <div className='login-form-container'>
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">Name: </label>
         <input
@@ -46,9 +46,9 @@ const LoginForm = ({signIn}) => {
         />
         <br />
         <br />
-        <input type="submit" value="Login User" />
+        <input type="submit" value="Log In" id="log-in-user" />
       </form>
-    </>
+    </div>
   );
 };
 
