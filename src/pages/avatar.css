@@ -1,0 +1,75 @@
+
+
+
+.avatar-container {
+    background-color: rgb(91, 60, 13);
+    width: 100vw;
+    height: 100vh;
+    color: sandybrown;
+}
+
+.sub-container{
+    margin-top: 100px;
+}
+
+.block{
+    border-bottom: 50px solid sandybrown;
+}
+
+#h1-avatar{
+    display: flex;
+    justify-content: center;
+}
+
+.Image-container{
+    display: flex;
+    justify-content: center;
+    gap:10%;
+    height: 120px;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.ava:hover{
+    border: 10px solid rgb(249, 232, 161);
+    border-radius: 50%;
+}
+
+
+.default-container {
+    display: flex;
+    justify-content: center;
+    margin-top:90px;
+}
+
+.defaults{
+    display: flex;
+}
+
+#defaults1{
+    width: 120px;
+    height:120px;
+    border-radius: 50%;
+}
+
+#defaults2{
+    width: 120px;
+    height:120px;
+    border-radius: 50%;
+}
+
+.default-text{
+    margin-top: 50px;
+    margin-right: 20px ;
+    font-size: 30px;
+}
+
+#button{
+    cursor: pointer;
+    background-color: antiquewhite;
+    color:sandybrown;
+    margin-left: 100px;
+    border-radius: 30px;
+    font-size:25px;
+}
+
