@@ -4,15 +4,19 @@
     padding: 10px;
     cursor: pointer;
     margin-top: 20px;
+    width: 70%;
 }
 
 .conversation:hover{
-    background-color: rgb(243, 243, 243);
+    background-color: sandybrown;
+    border-radius: 20px 80px 20px 50px;
+    color:whitesmoke;
+    width:80%;
 }
 
 .conversationImg{
-    width:40px;
-    height: 40px;
+    width:70px;
+    height: 70px;
     border-radius: 50%;
     object-fit: cover;
     margin-right: 20px;
@@ -20,4 +24,5 @@
 
 .conversationName{
     font-weight: 500;
+    font-size: 20px;
 }

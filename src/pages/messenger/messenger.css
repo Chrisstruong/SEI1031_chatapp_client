@@ -68,7 +68,9 @@
     padding: 10px;
     height: 100%;
 }
-
+.chatMenuWrapper{
+    overflow-y: scroll;
+}
 .noConversationGif{
     position: absolute;
     top: 15%;
