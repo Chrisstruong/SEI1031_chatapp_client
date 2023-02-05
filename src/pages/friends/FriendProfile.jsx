@@ -88,7 +88,7 @@ function FriendProfile() {
          <div className="profile-container">
             <div className="sub-profile-container">
                 <div id="background">
-                    <img id="background2" src="https://images.unsplash.com/photo-1665686377065-08ba896d16fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZnJpZW5kc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="" />
+                    <img id="background2" src="https://images.unsplash.com/photo-1520880867055-1e30d1cb001c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="" />
                 </div>
                 <div className="combine2">
                     <div className="profile-info">

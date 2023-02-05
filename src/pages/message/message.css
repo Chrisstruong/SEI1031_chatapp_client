@@ -20,8 +20,8 @@
     display: flex;
     padding: 10px;
     border-radius: 20px;
-    background-color: #1877f2;
-    color: white;
+    background-color: white;
+    color: black;
     max-width: 300px;
 }
 
@@ -35,8 +35,10 @@
 }
 
 .message.own .messageText {
-    background-color: white;
-    color: black;
+    background: linear-gradient(-45deg, sandybrown, #a23615,antiquewhite, #23d5c3);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+    color: white;
 }
 
 .edit {
@@ -54,3 +56,17 @@
     margin-left: 20px;
     background-color: black;
 }
+
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+} 

@@ -1,5 +1,10 @@
+.App{
+    margin-top: 30px;
+    width: 95vw;
+    margin-left: 25px;
+}
 .messenger {
-    height: calc(100vh-70px);
+    height: 85vh;
     display: flex;
     z-index: 1;
 }
@@ -26,7 +31,7 @@
 }
 
 .chatBoxTop{
-    height: 200px;
+    height: 80%;
     overflow-y: scroll;
     padding-right: 10px;
 }   
@@ -64,12 +69,29 @@
     height: 100%;
 }
 
-.noConversationText{
+.noConversationGif{
     position: absolute;
-    top: 10%;
+    top: 15%;
+    right: 35%;
     font-size: 50px;
     color: gray;
     cursor: default;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 20px;
+}
+.noConversationText{
+    position: absolute;
+    top: 60%;
+    right: 35%;
+    font-size: 50px;
+    color: brown;
+    cursor: default;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 20px;
 }
 
 
@@ -78,8 +100,8 @@
 .dropDownProfile {
     position: absolute;
     font-size: 18px;
-    top: 6rem;
-    right: 3.6rem;
+    top: 7.6rem;
+    right: 4.5rem;
     width: 160px;
     padding: 15px 30px 15px 0px;
     border-radius: 8px;
@@ -119,9 +141,13 @@
     position: absolute;
     background-color: black;
     color: white;
-    top: 3.7rem;
-    right: 3.3rem;
+    top: 5.5rem;
+    right: 5rem;
     border-radius: 50px;
+    cursor: pointer;
+}
+#arrowdown:hover{
+    border: 2px solid sandybrown;
 }
 
 
@@ -174,3 +200,6 @@
 .lii3:hover{
     border: 3px solid brown;
 }
+
+
+

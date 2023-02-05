@@ -2,7 +2,6 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { getUserToken } from '../utils/authToken'
-import wave from '../assets/wave.gif'
 import './avatar.css'
 
 

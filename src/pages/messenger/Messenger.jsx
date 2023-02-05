@@ -7,6 +7,7 @@ import ChatOnline from "../chatOnline/ChatOnline";
 import Search from "../search/Search";
 import { getUserToken, clearUserToken } from "../../utils/authToken";
 import { BiChevronDown,BiChevronUp } from "react-icons/bi";
+import hello from '../assets/hi.gif'
 
 function Messenger() {
     const token = getUserToken()
@@ -85,6 +86,7 @@ function Messenger() {
             const response = await fetch('http://localhost:4000/messages', requestOptions)
             const createdMessage = await response.json()
             setMessages([...messages, createdMessage])
+            console.log(messages)
             setNewMessage("")
         } catch (err) {
             console.log(err)
@@ -99,7 +101,7 @@ function Messenger() {
 
 
     return (
-        <>
+        <div className="real-big-container">
             {open ? 
             <div className="flex flex-col dropDownProfile">
                 <ul className="flex flex-col gap-4" style={{"listStyle": "none"}}>
@@ -113,7 +115,7 @@ function Messenger() {
 
             <div className="image-container" >
                 {member.avatarImage?<img id="avatar" src={member.avatarImage} alt="" onClick={() => {setOpen(!open); setArrow(!arrow)}}/>: <img id="avatar" src="https://t4.ftcdn.net/jpg/04/08/24/43/360_F_408244382_Ex6k7k8XYzTbiXLNJgIL8gssebpLLBZQ.jpg" alt="" onClick={() => {setOpen(!open); setArrow(!arrow)}}/>} 
-                {arrow? <BiChevronUp id="arrowdown" /> :<BiChevronDown id="arrowdown" />}
+                {arrow? <BiChevronUp id="arrowdown" onClick={() => {setOpen(!open); setArrow(!arrow)}}/> :<BiChevronDown id="arrowdown" onClick={() => {setOpen(!open); setArrow(!arrow)}}/>}
                 
             </div>
 
@@ -138,7 +140,7 @@ function Messenger() {
                                     <div className="chatBoxTop">
                                         {messages.map((msg) => (
                                             <div ref={scrollRef}>
-                                                <Message message={msg} own={msg.sender === userId} />
+                                                <Message message={msg} own={msg.sender === userId} currentConversation={currentChat} />
                                             </div>
                                         ))}
                                         {/* This function used for control orgranization of sender and receiver */}
@@ -148,7 +150,7 @@ function Messenger() {
                                         <textarea className="chatMessageInput" placeholder="write something..." onChange={(e) => setNewMessage(e.target.value)} value={newMessage} ></textarea>
                                         <button className="chatSubmitButton" onClick={handleSubmit}>
                                             Send</button>
-                                    </div></> : <span className="noConversationText">Open a conversation to start</span>}
+                                    </div></> : <><img src={hello} alt ="" className="noConversationGif" /><p className="noConversationText">Click to start</p></>}
                     </div>
 
                 </div>
@@ -169,7 +171,7 @@ function Messenger() {
 
 
             </div>
-        </>
+        </div>
     )
 }
 
