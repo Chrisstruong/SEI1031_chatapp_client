@@ -1,0 +1,14 @@
+#btnn{
+    width:20%;
+    padding: 30px;
+    font-size: 25px;
+    background: rgb(112, 31, 13);
+    color: sandybrown;
+    cursor: pointer; 
+}
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}

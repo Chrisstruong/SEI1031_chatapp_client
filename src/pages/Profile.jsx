@@ -81,7 +81,7 @@ function Profile() {
                 </div>
                 <div className="combine2">
                     <div className="profile-info">
-                        <img id="profile-avatar" src={member.avatarImage} alt={member.username} />
+                       {member.avatarImage? <img id="profile-avatar" src={member.avatarImage} alt={member.username}/>: <img id="profile-avatar" src="https://t4.ftcdn.net/jpg/04/08/24/43/360_F_408244382_Ex6k7k8XYzTbiXLNJgIL8gssebpLLBZQ.jpg" alt="" />}
                         <p>{member.username}</p>
                     </div>
 

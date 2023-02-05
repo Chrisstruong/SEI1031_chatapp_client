@@ -1,13 +1,16 @@
 import React from "react"
 import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
+import './friendProfile.css'
 
 
 function FriendProfile() {
     // '3000:${usernma}:id:userId
     const {id} = useParams()
+    const navigate = useNavigate()
     const {userId} =useParams()
     const [conversation, setConversation] = useState([])
+    const [currentConversation, setCurrentConversation] = useState()
     const [friend, setFriend] = useState([])
     const [follow, setFollow] = useState(false)
 
@@ -30,7 +33,6 @@ function FriendProfile() {
         try {
             const response = await fetch(`http://localhost:4000/auth/${id}`)
             const foundFriend = await response.json()
-            console.log(foundFriend)
             setFriend(foundFriend)
         } catch (err) {
             console.log(err)
@@ -42,7 +44,7 @@ function FriendProfile() {
     },[])
     
     const onSearch = async (e) => {
-        setFollow(true)
+        setFollow(!follow)
         const newFriend = {
             senderId: userId,
             receiverId: id,
@@ -58,18 +60,49 @@ function FriendProfile() {
             const response = await fetch('http://localhost:4000/conversations', requestOptions)
             const createdFriend = await response.json()
             setConversation([...conversation, createdFriend])
-            console.log("hello")
+            console.log(conversation)
+            navigate(-1)
+            
         } catch(err) {
             console.log(err)
         }
     }
+ 
+    // const removedConversation = async (e) => {
+    //     e.preventDefault()
+    //     setCurrentConversation()
+    //     try{
+    //         const options = {
+    //             method:"DELETE",
+    //         }
+    //         const response = await fetch(`http://localhost:4000/conversations/delete/${currentConversation._id}`, options)
+    //         const deletedFriend = await response.json
+    //     } catch(err){
+    //         console.log(err)
+    //     }
+    // }
 
 
     return (
         <>
-        <h1>hello</h1>
-        <h1>This is {friend.username}</h1>
-        <button onClick={onSearch}>{follow?"Unfollow":"Follow"}</button>
+         <div className="profile-container">
+            <div className="sub-profile-container">
+                <div id="background">
+                    <img id="background2" src="https://images.unsplash.com/photo-1665686377065-08ba896d16fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZnJpZW5kc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="" />
+                </div>
+                <div className="combine2">
+                    <div className="profile-info">
+                       {friend.avatarImage? <img id="profile-avatar" src={friend.avatarImage} alt={friend.username}/>: <img id="profile-avatar" src="https://t4.ftcdn.net/jpg/04/08/24/43/360_F_408244382_Ex6k7k8XYzTbiXLNJgIL8gssebpLLBZQ.jpg" alt="" />}
+                        <p>{friend.username}</p>
+                    </div>
+                    <div className="btn-container">
+                     <button onClick={onSearch} id="btnn">Follow</button> 
+                     </div>
+                
+                </div>
+            </div>
+        </div>
+      
         </>
     )
 }
