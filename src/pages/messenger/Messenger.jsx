@@ -98,6 +98,12 @@ function Messenger() {
         scrollRef.current?.scrollIntoView({ behavior: "smooth" })
     }, [messages])
 
+    const onEnterPress = (e) => {
+        if(e.keyCode == 13 && e.shiftKey == false) {
+          e.preventDefault();
+          handleSubmit()
+        }
+      }
 
 
     return (
@@ -147,7 +153,7 @@ function Messenger() {
 
                                     </div>
                                     <div className="chatBoxBottom">
-                                        <textarea className="chatMessageInput" placeholder="write something..." onChange={(e) => setNewMessage(e.target.value)} value={newMessage} ></textarea>
+                                        <textarea className="chatMessageInput" placeholder="write something...(shift + enter to start new line)" onChange={(e) => setNewMessage(e.target.value)} value={newMessage} onKeyDown={onEnterPress}></textarea>
                                         <button className="chatSubmitButton" onClick={handleSubmit}>
                                             Send</button>
                                     </div></> : <><img src={hello} alt ="" className="noConversationGif" /><p className="noConversationText">Click to start</p></>}

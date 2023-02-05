@@ -30,7 +30,8 @@
 .p-text{
     /* overflow: hidden;
     text-overflow: ellipsis; */
-    white-space: normal;
+    word-break: break-word;
+    white-space: pre-line;
 
 }
 
@@ -51,12 +52,15 @@
 }
 
 .edit {
-    padding: 3px;
+    padding: 5px;
     border-radius: 50px;
+    max-width: 24px;
+    max-height: 24px;
     margin-left: 20px;
     bottom: 0;
 
 }
+
 
 .edit:hover {
     cursor: pointer;

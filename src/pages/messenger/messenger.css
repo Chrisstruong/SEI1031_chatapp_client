@@ -46,16 +46,26 @@
     width: 80%;
     height: 90px;
     padding: 10px;
+    outline: none;
+
+   
+}
+.chatMessageInput:active{
+    width: 80%;
+    height: 90px;
+    padding: 10px;
+   
 }
 
 .chatSubmitButton{
-    width: 70px;
+    width: 100px;
     height:40px;
     border: none;
     border-radius: 5px;
     background-color: teal;
     cursor: pointer;
     color: white;
+    font-size: 20px;
 }
 
 
