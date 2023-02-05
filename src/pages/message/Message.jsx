@@ -54,7 +54,7 @@ function Message({ message, own, currentConversation }) {
             <div className="messageTop">
                 {own?<img className='messageImg' src={member.avatarImage} alt="" />:<img className='messageImg' src={friend.avatarImage} alt="" />}
                 <div className='messageText' onMouseEnter={()=>setIsShown(true)} onMouseLeave={()=>{setIsShown(false)}}>
-                    <p>{message.text}</p>
+                    <p className='p-text'>{message.text}</p>
                     {isShown? <p className='edit' onClick={()=>navigate(`/message/${message._id}`)}>{<VscKebabVertical/>}</p>: ""}
                 </div>
             </div>
