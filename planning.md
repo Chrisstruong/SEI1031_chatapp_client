@@ -12,7 +12,6 @@ I love SEI1031 community so much, so I decide to make an app that hopefully some
 + A live chat app.
 + Authentication
 + Upload user's own avatar (cartoon)
-+ Have icons
 ### Stretch goals:
 + Call or video call function
 + Adding icon reaction.
