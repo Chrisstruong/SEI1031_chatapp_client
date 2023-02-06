@@ -86,3 +86,13 @@
 
 
 
+#avatarbot{
+   text-decoration: underline;
+   cursor: pointer;
+}
+
+#avatarbot:hover{
+    font-size: 30px;
+    background-color: brown;
+    width: 60%;
+}

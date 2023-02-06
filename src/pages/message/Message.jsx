@@ -1,17 +1,18 @@
 import './message.css'
-import {format} from "timeago.js"
+import { format } from "timeago.js"
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import React from 'react'
 import { VscKebabVertical } from "react-icons/vsc";
 import { AiFillAccountBook } from "react-icons/ai";
+import hello from '../assets/hello.gif'
 import { useNavigate } from 'react-router-dom';
 function Message({ message, own, currentConversation }) {
     const [isShown, setIsShown] = useState(false)
     const [member, setMember] = useState([])
     const [friend, setFriend] = useState([])
     const navigate = useNavigate()
-    const {userId} = useParams()
+    const { userId } = useParams()
 
     const friendId = currentConversation.members.find(function (id) {
         return id !== userId
@@ -26,13 +27,13 @@ function Message({ message, own, currentConversation }) {
             console.log(err)
         }
     }
-    
+
 
     useEffect(() => {
         getMember()
-    },[])
+    }, [])
 
-  
+
 
 
     const getFriend = async () => {
@@ -44,19 +45,19 @@ function Message({ message, own, currentConversation }) {
             console.log(err)
         }
     }
-    
+    console.log(message)
 
     useEffect(() => {
         getFriend()
-    },[])
+    }, [])
     return (
         <div className={own ? "message own" : "message"}>
             <div className="messageTop">
-                {own?<img className='messageImg' src={member.avatarImage} alt="" />:<img className='messageImg' src={friend.avatarImage} alt="" />}
-                <div className='messageText' onMouseEnter={()=>setIsShown(true)} onMouseLeave={()=>{setIsShown(false)}}>
+                {own ? <img className='messageImg' src={member.avatarImage} alt="" /> : <img className='messageImg' src={friend.avatarImage} alt="" />}
+                <div className='messageText' onMouseEnter={() => setIsShown(true)} onMouseLeave={() => { setIsShown(false) }}>
                     <p className='p-text'>{message.text}</p>
                     <div className='edit-container'>
-                    {isShown? <p className='edit' onClick={()=>navigate(`/message/${message._id}`)}>{<VscKebabVertical/>}</p>: ""}
+                        {isShown ? <p className='edit' onClick={() => navigate(`/message/${message._id}`)}>{<VscKebabVertical />}</p> : ""}
                     </div>
                 </div>
             </div>

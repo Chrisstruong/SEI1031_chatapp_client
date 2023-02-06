@@ -14,6 +14,7 @@ import Auth from "./pages/Auth";
 
 import { UserContext } from "./data";
 import LoginPage from "./pages/LoginPage";
+import AvatarBot from "./pages/AvatarBot";
 console.log(UserContext)
 
 
@@ -38,6 +39,7 @@ function App() {
           <Route path='/messenger/:userId' element={<Messenger />} />
           <Route path='/message/:id' element={<MessageDetail />} />
           <Route path='/profile/:userId' element={<Profile />} />
+          <Route path='/profile/avatarbot/:userId' element={<AvatarBot/>} />
           <Route path='/profile/:username/:id/:userId' element={<FriendProfile />} />
 
           <Route path='/home' element={<Home />} />

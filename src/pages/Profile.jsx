@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import React from "react"
-import { useNavigate, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import { getUserToken } from "../utils/authToken"
 import './profile.css'
 
@@ -34,18 +34,6 @@ function Profile() {
     }, [])
 
 
-    // const removedMember = async () => {
-    //     try {
-    //         const options = {
-    //             method: "DELETE",
-    //         }
-    //         const response = await fetch(deleteURL, options)
-    //         const deletedReview = await response.json
-    //     } catch(err){
-    //         console.log(err)
-    //         navigate('/')
-    //     }
-    // }
     const updatedMember = async (e) => {
         e.preventDefault()
         const newMember = {
@@ -106,12 +94,10 @@ function Profile() {
                                     onChange={(e) => setNewAvatar(e.target.value)}
                                 />
                                 
-                                {/* <p>OR:</p>
-                                <div className="adding-image">
-                                <img className="avatar-array" src={avatarArray[0]} alt="" onClick={()=>setAvatarClicking(avatarArray[1])}/>
-                                <img className="avatar-array" src={avatarArray[1]} alt="" onClick={()=>setAvatarClicking(avatarArray[1])}/>
-                                <img className="avatar-array" src={avatarArray[2]} alt="" onClick={()=>setAvatarClicking(avatarArray[1])}/>
-                                </div> */}
+                                <p>OR:</p>
+                                <p onClick={()=>navigate(`/profile/avatarbot/${userId}`)} id="avatarbot">Avatar bot</p>
+                                
+                               
                             </label>
                             <input type="submit" value="updated profile" id="btn" />
                         </form>
