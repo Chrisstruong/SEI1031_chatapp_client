@@ -11,8 +11,7 @@ import './login/loginPage.css'
 
 function Auth(props){
     const  {setAuth, setUser} = useContext(UserContext)
-    // const  [userId, setUserId] = useState("")
-    // console.log(setAuth, setUser)
+
     const registerUser = async (data) => {
         try {
     
