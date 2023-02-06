@@ -14,7 +14,7 @@ Express, MongoDB, Node.js, Heroku
 - Planning documentation: https://github.com/Chrisstruong/SEI1031_chatapp_client/blob/main/planning.md
 
 ## Screen Captures of Current Version
-### Frontend
+### Client
 #### Home page
 ![Screen Shot 2023-01-10 at 3 37 24 PM](https://i.imgur.com/iKcYMJo.png)
 #### User Profile
@@ -25,3 +25,6 @@ Express, MongoDB, Node.js, Heroku
 ![Screen Shot 2023-01-10 at 3 37 24 PM](https://i.imgur.com/La3xR8Z.png)
 #### Edit Message page
 ![Screen Shot 2023-01-10 at 3 37 24 PM](https://i.imgur.com/V3LqMwY.png)
+### Server
+#### User 
+![Screen Shot 2023-01-10 at 3 37 24 PM](https://i.imgur.com/V149GjO.png)
