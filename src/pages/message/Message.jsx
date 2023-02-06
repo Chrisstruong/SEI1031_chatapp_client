@@ -20,7 +20,7 @@ function Message({ message, own, currentConversation }) {
 
     const getMember = async () => {
         try {
-            const response = await fetch(`http://localhost:4000/auth/${userId}`)
+            const response = await fetch(`https://chatapp-server.herokuapp.com/auth/${userId}`)
             const foundMember = await response.json()
             setMember(foundMember)
         } catch (err) {
@@ -38,7 +38,7 @@ function Message({ message, own, currentConversation }) {
 
     const getFriend = async () => {
         try {
-            const response = await fetch(`http://localhost:4000/auth/${friendId}`)
+            const response = await fetch(`https://chatapp-server.herokuapp.com/auth/${friendId}`)
             const foundFriend = await response.json()
             setFriend(foundFriend)
         } catch (err) {

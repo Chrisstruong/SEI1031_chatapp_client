@@ -16,7 +16,7 @@ function FriendProfile() {
 
     const getConversation = async () =>{
         try{
-            const response = await fetch(`http://localhost:4000/conversations/${userId}`)
+            const response = await fetch(`https://chatapp-server.herokuapp.com/conversations/${userId}`)
             const foundConversation = await response.json()
             setConversation(foundConversation)
         } catch(err){ 
@@ -31,7 +31,7 @@ function FriendProfile() {
 
     const getFriend = async () => {
         try {
-            const response = await fetch(`http://localhost:4000/auth/${id}`)
+            const response = await fetch(`https://chatapp-server.herokuapp.com/auth/${id}`)
             const foundFriend = await response.json()
             setFriend(foundFriend)
         } catch (err) {
@@ -57,7 +57,7 @@ function FriendProfile() {
                 },
                 body: JSON.stringify(newFriend)
             }
-            const response = await fetch('http://localhost:4000/conversations', requestOptions)
+            const response = await fetch('https://chatapp-server.herokuapp.com/conversations', requestOptions)
             const createdFriend = await response.json()
             setConversation([...conversation, createdFriend])
             console.log(conversation)

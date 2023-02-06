@@ -27,7 +27,7 @@ function AvatarBot(props) {
 
     const getMember = async () => {
         try {
-            const response = await fetch(`http://localhost:4000/auth/${userId}`)
+            const response = await fetch(`https://chatapp-server.herokuapp.com/auth/${userId}`)
             const foundMember = await response.json()
             setMember(foundMember)
         } catch (err) {
@@ -57,7 +57,7 @@ function AvatarBot(props) {
                 },
                 body: JSON.stringify(newMember)
             }
-            const response = await fetch(`http://localhost:4000/auth/${userId}`, requestOptions)
+            const response = await fetch(`https://chatapp-server.herokuapp.com/auth/${userId}`, requestOptions)
             const updatedMember = await response.json()
             setMember(updatedMember)
             navigate(`/profile/${userId}`)

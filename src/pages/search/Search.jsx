@@ -9,7 +9,7 @@ function Search({ ID }) {
     const [conversation, setConversation] = useState([])
     const [users, setUsers] = useState('')
     const [receiverIds, setReceiverIds] = useState('')
-    const URL = 'http://localhost:4000/auth'
+    const URL = 'https://chatapp-server.herokuapp.com/auth'
 
     const getUsers = async () => {
         try {
@@ -26,7 +26,7 @@ function Search({ ID }) {
 
     const getConversation = async () => {
         try {
-            const response = await fetch(`http://localhost:4000/conversations/${ID}`)
+            const response = await fetch(`https://chatapp-server.herokuapp.com/conversations/${ID}`)
             const foundConversation = await response.json()
             console.log(foundConversation)
             setConversation(foundConversation)

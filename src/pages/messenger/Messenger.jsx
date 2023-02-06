@@ -21,7 +21,7 @@ function Messenger() {
     const [open, setOpen] = useState(false)
     const [arrow, setArrow] = useState(false)
     const scrollRef = useRef()
-    const BASE_URL = `http://localhost:4000/conversations/${userId}`
+    const BASE_URL = `https://chatapp-server.herokuapp.com/conversations/${userId}`
 
     if (!token) {
         navigate('/')
@@ -29,7 +29,7 @@ function Messenger() {
 
     const getMember = async () => {
         try {
-            const response = await fetch(`http://localhost:4000/auth/${userId}`)
+            const response = await fetch(`https://chatapp-server.herokuapp.com/auth/${userId}`)
             const foundMember = await response.json()
             setMember(foundMember)
         } catch (err) {
@@ -56,7 +56,7 @@ function Messenger() {
 
     const getMessages = async () => {
         try {
-            const response = await fetch('http://localhost:4000/messages/' + currentChat?._id)
+            const response = await fetch('https://chatapp-server.herokuapp.com/messages/' + currentChat?._id)
             const foundMessage = await response.json()
             setMessages(foundMessage)
         } catch (err) {
@@ -83,7 +83,7 @@ function Messenger() {
                 },
                 body: JSON.stringify(message)
             }
-            const response = await fetch('http://localhost:4000/messages', requestOptions)
+            const response = await fetch('https://chatapp-server.herokuapp.com/messages', requestOptions)
             const createdMessage = await response.json()
             setMessages([...messages, createdMessage])
             console.log(messages)

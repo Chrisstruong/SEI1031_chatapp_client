@@ -15,7 +15,8 @@ function Conversation({ conversation, currentUserId, currentConversation }) {
     })
     const getFriend = async () => {
         try {
-            const response = await fetch("http://localhost:4000/auth/" + friendId)
+            // const response = await fetch("http://localhost:4000/auth/" + friendId)
+            const response = await fetch("https://chatapp-server.herokuapp.com/auth/" + friendId)
             const foundFriend = await response.json()
             setName(foundFriend.username)
             setImage(foundFriend.avatarImage)
@@ -34,7 +35,7 @@ function Conversation({ conversation, currentUserId, currentConversation }) {
             const options = {
                 method:"DELETE",
             }
-            const response = await fetch(`http://localhost:4000/conversations/delete/${currentConversation._id}`, options)
+            const response = await fetch(`https://chatapp-server.herokuapp.com/conversations/delete/${currentConversation._id}`, options)
             const deletedFriend = await response.json
             window.location.reload(false)
         } catch(err){

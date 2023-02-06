@@ -18,10 +18,10 @@ function Profile() {
     let randomNum2 = Math.floor(Math.random() * 500)
     let randomNum3 = Math.floor(Math.random() * 500)
     const avatarArray = [`https://api.multiavatar.com/${randomNum1}.png`,`https://api.multiavatar.com/${randomNum2}.png`, `https://api.multiavatar.com/${randomNum3}.png`]
-    const deleteURL = `http://localhost:4000/auth/${userId}`
+    const deleteURL = `https://chatapp-server.herokuapp.com/auth/${userId}`
     const getMember = async () => {
         try {
-            const response = await fetch(`http://localhost:4000/auth/${userId}`)
+            const response = await fetch(`https://chatapp-server.herokuapp.com/auth/${userId}`)
             const foundMember = await response.json()
             setMember(foundMember)
             setNewName(foundMember.username)
@@ -53,7 +53,7 @@ function Profile() {
                 },
                 body: JSON.stringify(newMember)
             }
-            const response = await fetch(`http://localhost:4000/auth/${userId}`, requestOptions)
+            const response = await fetch(`https://chatapp-server.herokuapp.com/auth/${userId}`, requestOptions)
             const updatedMember = await response.json()
             setMember(updatedMember)
             console.log(member)

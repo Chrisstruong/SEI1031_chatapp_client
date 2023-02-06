@@ -20,7 +20,7 @@ function LoginPage() {
             }
 
             const response = await fetch(
-                "http://localhost:4000/auth/login",
+                "https://chatapp-server.herokuapp.com/auth/login",
                 configs
             )
 

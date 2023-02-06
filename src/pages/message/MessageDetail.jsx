@@ -17,7 +17,7 @@ function MessageDetail (){
     }
     const getMessage = async ()=>{
         try{
-            const response = await fetch(`http://localhost:4000/messages/detail/${id}`)
+            const response = await fetch(`https://chatapp-server.herokuapp.com/messages/detail/${id}`)
             const foundMessage = await response.json()
             console.log(foundMessage._id)
             setMessage(foundMessage)
@@ -39,7 +39,7 @@ function MessageDetail (){
                 }
             
             }
-            const response = await fetch(`http://localhost:4000/messages/detail/${id}`, options)
+            const response = await fetch(`https://chatapp-server.herokuapp.com/messages/detail/${id}`, options)
             const deletedMessage = await response.json
             navigate(-1)
         } catch(err){
@@ -65,7 +65,7 @@ function MessageDetail (){
                 },
                 body: JSON.stringify(newMessage)
             }
-            const response = await fetch(`http://localhost:4000/messages/detail/${id}`, requestOptions)
+            const response = await fetch(`https://chatapp-server.herokuapp.com/messages/detail/${id}`, requestOptions)
             const updatedMessage2 = await response.json()
             setMessage(updatedMessage2)
             navigate(-1)

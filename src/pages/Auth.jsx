@@ -24,7 +24,7 @@ function Auth(props){
             }
     
             const newUser = await fetch(
-                "http://localhost:4000/auth/register",
+                "https://chatapp-server.herokuapp.com/auth/register",
                 configs
             )
     
