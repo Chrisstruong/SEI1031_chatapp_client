@@ -28,3 +28,18 @@ Express, MongoDB, Node.js, Heroku
 ### Server
 #### User 
 ![Screen Shot 2023-01-10 at 3 37 24 PM](https://i.imgur.com/V149GjO.png)
+#### Messages
+![Screen Shot 2023-01-10 at 3 37 24 PM](https://i.imgur.com/eUsdd2V.png)
+### User Stories
+As a user, I want to be able to follow people so that I can shoot a message.
+As a user, I want to be able to edit or delete my message sometimes by accident.
+As a user, I also want to change my username and my avatar.
+### User flow
+#### Step 1:
+![Screen Shot 2023-01-10 at 3 37 24 PM](https://i.imgur.com/aZtzwN7.png)
+#### Step 2:
+![Screen Shot 2023-01-10 at 3 37 24 PM](https://i.imgur.com/V4RpUrC.png)
+#### Step 3:
+![Screen Shot 2023-01-10 at 3 37 24 PM](https://i.imgur.com/NO8KpBj.png)
+
+
