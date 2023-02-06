@@ -57,7 +57,6 @@ function Profile() {
             const updatedMember = await response.json()
             setMember(updatedMember)
             console.log(member)
-            // console.log(member)
             navigate(`/messenger/${userId}`)
         } catch (err) {
             console.log(err)
