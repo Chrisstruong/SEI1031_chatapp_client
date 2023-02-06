@@ -163,9 +163,9 @@ function Messenger() {
 
                 <div className="chatOnline">
                     <div className="chatOnlineWrapper">
-                        <ChatOnline />
-                        <ChatOnline />
-                        <ChatOnline />
+                        <ChatOnline name="MINH" image="https://api.multiavatar.com/234.png" />
+                        <ChatOnline name="TRIET" image="https://api.multiavatar.com/123.png"/>
+                        <ChatOnline name="TRUONG" image="https://api.multiavatar.com/4234.png"/>
                     </div>
 
                 </div>
