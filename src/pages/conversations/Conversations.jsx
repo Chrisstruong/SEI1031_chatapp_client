@@ -48,7 +48,7 @@ function Conversation({ conversation, currentUserId, currentConversation }) {
                 alt="" />
             <span className="conversationName">{Name}</span>
             {isShown? <p className='edit' onClick={()=> {setIsShownButton(!isShownButton)}}>{<VscKebabVertical/>}</p>: ""}
-            {isShownButton ? <button onClick={removedFriend} >Unfollow</button>: ""}
+            {isShownButton ? <button id="unfollow-btn"onClick={removedFriend} >Unfollow</button>: ""}
         </div>
     )
 }

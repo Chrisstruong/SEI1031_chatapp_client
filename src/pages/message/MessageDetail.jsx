@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react'
 import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { getUserToken } from '../../utils/authToken'
+import './messageDetail.css'
 function MessageDetail (){
     const token = getUserToken()
     
@@ -76,24 +77,25 @@ function MessageDetail (){
 
 
     return(
-        <>
+        <div className='detail-message'>
         <h1>Welcome to Edit/Delete Message page</h1>
-        <div>
+        <div >
             <form onSubmit={updatedMessage}>
                 <label> Edit Message:
                     <input
                         type="text"
                         value={newText}
                         onChange={(e)=>setNewText(e.target.value)}
+                        id="edit-input"
                     />
                 </label>
-                <input type="submit" value="Edit message"/>
+                <input type="submit" value="Edit message" id="submit-id"/>
             </form>
         </div>
-        <div>
-            <button onClick={removedMessage}>Delete message</button>
+        <div className='delete-btn'>
+            <button onClick={removedMessage} id="delete-id">Delete message</button>
         </div>
-        </>
+        </div>
     )
     
 
