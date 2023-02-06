@@ -34,7 +34,7 @@
 
 
 #search {
-    width: 650px;
+    width: 400px;
     border: 0px solid white;
     background-color: whitesmoke;
     text-decoration: none!important;
@@ -47,7 +47,6 @@
     background-color: antiquewhite;
     border-bottom: 2px solid black;
     font-size: 20px;
-    
 }
 
 .search-context {
