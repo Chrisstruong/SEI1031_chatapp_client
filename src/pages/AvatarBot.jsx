@@ -42,12 +42,12 @@ function AvatarBot(props) {
 
     const updatedMember = async (e) => {
         e.preventDefault()
-        console.log("hello")
         const newMember = {
             _id: userId,
             username: member.username,
             avatarImage: avatar
         }
+       
         try {
             const requestOptions = {
                 method: "PUT",
@@ -60,7 +60,7 @@ function AvatarBot(props) {
             const response = await fetch(`http://localhost:4000/auth/${userId}`, requestOptions)
             const updatedMember = await response.json()
             setMember(updatedMember)
-            navigate(`/messenger/${userId}`)
+            navigate(`/profile/${userId}`)
         } catch (err) {
             console.log(err)
         }

@@ -24,6 +24,8 @@ function Profile() {
             const response = await fetch(`http://localhost:4000/auth/${userId}`)
             const foundMember = await response.json()
             setMember(foundMember)
+            setNewName(foundMember.username)
+            setNewAvatar(foundMember.avatarImage)
         } catch (err) {
             console.log(err)
         }
@@ -41,7 +43,7 @@ function Profile() {
             username: newName,
             avatarImage: newAvatar
         }
-        console.log(newMember)
+        console.log(newMember.avatarImage)
         try {
             const requestOptions = {
                 method: "PUT",
@@ -56,7 +58,7 @@ function Profile() {
             setMember(updatedMember)
             console.log(member)
             // console.log(member)
-            navigate(-1)
+            navigate(`/messenger/${userId}`)
         } catch (err) {
             console.log(err)
         }
