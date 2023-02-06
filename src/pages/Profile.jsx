@@ -102,10 +102,6 @@ function Profile() {
                             </label>
                             <input type="submit" value="updated profile" id="btn" />
                         </form>
-
-                        {/* <div>
-                    <button onClick={removedMember}>Remove account</button>
-                </div> */}
                     </div>
                 </div>
             </div>
