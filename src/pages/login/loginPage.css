@@ -106,6 +106,7 @@ body {
     border-bottom: 3px solid rgb(147, 27, 27);
     font-size: 20px;
     color: rgb(147, 27, 27);
+    -webkit-text-security: circle;
 }
 
 #password:focus{
