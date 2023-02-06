@@ -41,5 +41,16 @@ As a user, I also want to change my username and my avatar.
 ![Screen Shot 2023-01-10 at 3 37 24 PM](https://i.imgur.com/V4RpUrC.png)
 #### Step 3:
 ![Screen Shot 2023-01-10 at 3 37 24 PM](https://i.imgur.com/NO8KpBj.png)
-
+### Future implementation
+- Be able to display a gif when there is no text.
+- Follow or unfollow error.
+- Add icons and icons reaction.
+- Add socket.io.
+### Triumphs
+- Authentication
+- Be able to shoot a message
+- Update username or avatar
+### Challenges
+- Post a message
+- Need to test a lot in Postman.
 
