@@ -17,3 +17,11 @@ Express, MongoDB, Node.js, Heroku
 ### Frontend
 #### Home page
 ![Screen Shot 2023-01-10 at 3 37 24 PM](https://i.imgur.com/iKcYMJo.png)
+#### User Profile
+![Screen Shot 2023-01-10 at 3 37 24 PM](https://i.imgur.com/izmNfyu.png)
+#### Friend Profile
+![Screen Shot 2023-01-10 at 3 37 24 PM](https://i.imgur.com/BGvCoUY.png)
+#### Avatar Bot
+![Screen Shot 2023-01-10 at 3 37 24 PM](https://i.imgur.com/La3xR8Z.png)
+#### Edit Message page
+![Screen Shot 2023-01-10 at 3 37 24 PM](https://i.imgur.com/V3LqMwY.png)
