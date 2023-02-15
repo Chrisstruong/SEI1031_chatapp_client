@@ -25,8 +25,6 @@ function LoginPage() {
             )
 
             const currentUser = await response.json()
-            //console.log(currentUser)
-
             if (currentUser.token) {
                 // sets local storage
                 setUserToken(currentUser.token)

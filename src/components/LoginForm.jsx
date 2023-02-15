@@ -12,7 +12,7 @@ const LoginForm = ({signIn}) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const createdUserToken = await signIn(input)
-
+    console.log(createdUserToken)
     if (createdUserToken) {
       navigate(`/messenger/${createdUserToken.user._id}`)
     } else {
