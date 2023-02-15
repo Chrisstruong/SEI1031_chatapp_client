@@ -9,6 +9,7 @@ import './login/loginPage.css'
 function LoginPage() {
     const { setAuth, setUser } = useContext(UserContext)
 
+    // Code Sample part 1 STARTS
     const loginUser = async (data) => {
         try {
             const configs = {
@@ -44,6 +45,7 @@ function LoginPage() {
             setAuth(false);
         }
     }
+    // END part 1
 
     return (
         <div className="container">
@@ -52,7 +54,11 @@ function LoginPage() {
                     <img src="https://coursereport-s3-production.global.ssl.fastly.net/uploads/school/logo/2/original/CMYK-Red_Small_GeneralAssembly-Cog__1_.png" id="GA-image" alt="GA" />
                     <h1 id="SEI1031">SEI1031_GRADUATES</h1>
                 </div>
+
+                {/*Code Sample part 2 STARTS  */}
                 <LoginForm signIn={loginUser} />
+                {/*End part 2  */}
+                
                 <div className="Link-to-register">
                     <p>LET'S BECOME SEI1031 FAM! <span ><Link to='/register'id="Register" >REGISTER</Link></span></p>
                 </div>
