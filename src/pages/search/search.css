@@ -120,3 +120,13 @@
     background-color: rgb(253, 171, 63);
     overflow-y: scroll;
 }
+#btn2 {
+    background-color: brown;
+    padding:10px;
+    border: 2px solid black;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    color: sandybrown;
+    border-radius: 5px;
+}

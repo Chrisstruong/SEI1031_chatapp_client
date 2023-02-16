@@ -29,7 +29,6 @@ function Auth(props){
             )
     
             const parsedUser = await newUser.json()
-            // console.log(parsedUser.user._id)
     
             // sets local storage
             setUserToken(parsedUser.token)

@@ -9,6 +9,7 @@ function Search({ ID }) {
     const [conversation, setConversation] = useState([])
     const [users, setUsers] = useState('')
     const [receiverIds, setReceiverIds] = useState('')
+    const [display, setDisplay] = useState(true)
     const URL = 'https://chatapp-server.herokuapp.com/auth'
 
     const getUsers = async () => {
@@ -38,43 +39,30 @@ function Search({ ID }) {
     useEffect(() => {
         getConversation()
     }, [])
-
     const onChange = (e) => {
+        if (e.target.value.length > 0){
+            setDisplay(true)
+        } else {
+            setDisplay(false)
+        }
         setSearchValue(e.target.value)
     }
-    // const onSearch = async (e) => {
-    //     const newFriend = {
-    //         senderId: ID,
-    //         receiverId: receiverIds._id,
-    //     }
-    //     console.log(newFriend)
-    //     try{
-    //         const requestOptions = {
-    //             method: "POST",
-    //             headers: {
-    //                 "Content-Type": "application/json",
-    //             },
-    //             body:JSON.stringify(newFriend)
-    //         }
-    //         const response = await fetch('http://localhost:4000/conversations', requestOptions)
-    //         const createdFriend = await response.json()
-    //         setConversation([...conversation, createdFriend])
-    //     } catch(err) {
-    //         console.log(err)
-    //     }
-    //     // window.location.reload(false)
-    // }
 
     const onSearch = (searchItem) => {
         setSearchValue(searchItem)
     }
+
+    // setTimeout(() => {
+    //     SetDisplay(true)
+    //   }, 1000);
+
     return (
         <div className='search-context'>
             <div className='search-context-inner'>
-                <input type="text" value={searchValue} onChange={onChange} id="search" autoComplete="off" placeholder='Add new friend...' />
+                <input type="text" value={searchValue} onChange={onChange} onClick={()=>setDisplay(false)}  id="search" autoComplete="off" placeholder='Add new friend...' />
             </div>
             <div className='drop-down-list'>
-                {Object.values(users).filter((user) => {
+                {display?Object.values(users).filter((user) => {
                     const searchItem = searchValue.toLowerCase()
                     const userName2 = user.username.toLowerCase()
                     return (searchItem && userName2.startsWith(searchItem) && userName2 !== searchItem)
@@ -93,6 +81,38 @@ function Search({ ID }) {
                     ))
 
 
+                :
+                <div className='drop-down-row'>
+                    <button onClick={()=>setDisplay(true)} id="btn2">X</button>
+
+                    <Link style={{textDecoration: 'none'}} key="63e07241a1d2dc9f7bc4d04d" to={`/profile/TRIETTRUONG/63e07241a1d2dc9f7bc4d04d/${ID}`}>
+                        <div className='drop-down-info'>
+                            <img id="search-image" style={{borderRadius: '10px'}} src="https://api.multiavatar.com/458.png" alt=""/>
+                            <div>
+                                <div id="search-title" style={{textDecoration: 'none'}}>TRIET TRUONG</div>
+                            </div>
+                        </div>
+                    </Link>
+
+                    <Link style={{textDecoration: 'none'}} key="63e10a75a1d2dc9f7bc4d1a4" to={`/profile/zachSykes/63e10a75a1d2dc9f7bc4d1a4/${ID}`}>
+                        <div className='drop-down-info'>
+                            <img id="search-image" style={{borderRadius: '10px'}} src="https://api.multiavatar.com/141.png" alt=""/>
+                            <div>
+                                <div id="search-title" style={{textDecoration: 'none'}}>zachSykes</div>
+                            </div>
+                        </div>
+                    </Link>
+
+                    <Link style={{textDecoration: 'none'}} key="63e115caa1d2dc9f7bc4d3dd" to={`/profile/JohnGoodrich/63e115caa1d2dc9f7bc4d3dd/${ID}`}>
+                        <div className='drop-down-info'>
+                            <img id="search-image" style={{borderRadius: '10px'}} src="https://api.multiavatar.com/118.png" alt=""/>
+                            <div>
+                                <div id="search-title" style={{textDecoration: 'none'}}>JohnGoodrich</div>
+                            </div>
+                        </div>
+                    </Link>
+                </div>
+                
                 }
 
             </div>
