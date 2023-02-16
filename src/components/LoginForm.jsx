@@ -1,14 +1,14 @@
-import {useNavigate} from 'react-router-dom';
-import {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 // import '../pages/login/loginPage.css'
 
 
 const LoginForm = ({signIn}) => {
-  
-	const initialState = { username: "", password: ""}
+
+  const initialState = { username: "", password: "" }
   const [input, setInput] = useState(initialState)
-	const navigate = useNavigate()
- 
+  const navigate = useNavigate()
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     const createdUserToken = await signIn(input)
@@ -18,7 +18,7 @@ const LoginForm = ({signIn}) => {
     } else {
       navigate("/")
     }
-		setInput(initialState);
+    setInput(initialState);
   };
 
   const handleChange = (e) => {
