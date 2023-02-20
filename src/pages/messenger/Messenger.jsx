@@ -8,8 +8,10 @@ import Search from "../search/Search";
 import { getUserToken, clearUserToken } from "../../utils/authToken";
 import { BiChevronDown,BiChevronUp } from "react-icons/bi";
 import hello from '../assets/hi.gif'
+import {io} from "socket.io-client"
 
 function Messenger() {
+    const socket = useRef()
     const token = getUserToken()
     let { userId } = useParams()
     const navigate = useNavigate()
@@ -22,6 +24,17 @@ function Messenger() {
     const [arrow, setArrow] = useState(false)
     const scrollRef = useRef()
     const BASE_URL = `https://chatapp-server.herokuapp.com/conversations/${userId}`
+
+    useEffect(()=> {
+        socket.current = io("ws://localhost:8900");
+    }, [])
+    
+    useEffect(()=> {
+        socket.current.emit("addUser", userId)
+        socket.current.on("getUsers", users=>{
+            console.log(users)
+        })
+    }, [userId])
 
     if (!token) {
         navigate('/')
@@ -73,7 +86,13 @@ function Messenger() {
             text: newMessage,
             owner: userId
         }
-        console.log(userId)
+        const receiverId = currentChat.members.find(member=> member !== userId) 
+
+        socket.current.emit("sendMessage", {
+            senderId: userId,
+            receiverId,
+            text: newMessage,
+        })
         try {
             const requestOptions = {
                 method: "POST",
