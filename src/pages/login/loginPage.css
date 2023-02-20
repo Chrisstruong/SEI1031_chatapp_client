@@ -7,8 +7,8 @@ html {
 
 body {
     overflow: auto;
-   /* background: linear-gradient(-45deg, #ee7752, #5c0303,antiquewhite, #23d5c3); */
-   background-color: #5c0303    ;
+   background: linear-gradient(-45deg, #ee7752, #5c0303,antiquewhite, #23d5c3);
+   /* background-color: #5c0303    ; */
 	background-size: 400% 400%;
 	animation: gradient 25s ease infinite;
     height: 100%;
@@ -23,8 +23,8 @@ body {
 .container{
     border: 2px solid black;
     background-color: sandybrown;
-    height:100vh;
-    width: 100vw;
+    height:95vh;
+    width: 95vw;
 }
 
 .GA-sei1031{

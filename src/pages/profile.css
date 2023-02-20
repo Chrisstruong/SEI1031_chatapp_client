@@ -5,8 +5,8 @@
 }
 
 #background{
-    /* background: url("https://images.unsplash.com/photo-1608555307638-992062b31329?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YmFja2dyb3VuZCUyMG9yYW5nZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60") no-repeat center center fixed;  */
-    /* background-size: cover; */
+    /* background: url("https://images.unsplash.com/photo-1608555307638-992062b31329?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YmFja2dyb3VuZCUyMG9yYW5nZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60") no-repeat center center fixed; 
+    background-size: cover; */
     opacity: 0.9;
     position: relative;  
 }
